@@ -86,18 +86,7 @@ async function checkout(cardFields) {
     // See: https://developer.paypal.com/docs/checkout/standard/customize/handle-funding-failures/
   }
 
-  // unrecoverable errors
-  if (errorDetail) {
-    let msg = "Sorry, your transaction could not be processed.";
-    if (errorDetail.description) {
-      msg += "\n\n" + errorDetail.description;
-    }
-    if (orderData.debug_id) {
-      msg += " (" + orderData.debug_id + ")";
-    }
-    return alert(msg); // Show a failure message
-  }
-
+ 
   // show a success message or redirect
   window.location = "/?success";
 }
