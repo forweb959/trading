@@ -2,11 +2,11 @@ import fetch from "node-fetch";
 
 // set some important variables
 const { CLIENT_ID, APP_SECRET } = process.env;
-const base = "https://api-m.sandbox.paypal.com";
+const base = "https://api-m.paypal.com";
 
 // call the create order method
 export async function createOrder() {
-  const purchaseAmount = "100.00"; // TODO: pull prices from a database
+  const purchaseAmount = "13.00"; // TODO: pull prices from a database
   const accessToken = await generateAccessToken();
   const url = `${base}/v2/checkout/orders`;
   const response = await fetch(url, {
